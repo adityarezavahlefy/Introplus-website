@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #1ac8db; /* cyan-400 - Trust anchor + CTA power */
+  --color-primary-50: #ecfeff; /* cyan-50 */
+  --color-primary-100: #cffafe; /* cyan-100 */
+  --color-primary-200: #a5f3fc; /* cyan-200 */
+  --color-primary-300: #67e8f9; /* cyan-300 */
+  --color-primary-400: #1ac8db; /* cyan-400 */
+  --color-primary-500: #06b6d4; /* cyan-500 */
+  --color-primary-600: #0891b2; /* cyan-600 */
+  --color-primary-700: #0e7490; /* cyan-700 */
+  --color-primary-800: #155e75; /* cyan-800 */
+  --color-primary-900: #164e63; /* cyan-900 */
+
+  /* Secondary Colors */
+  --color-secondary: #000000; /* black - Professional authority */
+  --color-secondary-50: #f9fafb; /* gray-50 */
+  --color-secondary-100: #f3f4f6; /* gray-100 */
+  --color-secondary-200: #e5e7eb; /* gray-200 */
+  --color-secondary-300: #d1d5db; /* gray-300 */
+  --color-secondary-400: #9ca3af; /* gray-400 */
+  --color-secondary-500: #6b7280; /* gray-500 */
+  --color-secondary-600: #4b5563; /* gray-600 */
+  --color-secondary-700: #374151; /* gray-700 */
+  --color-secondary-800: #1f2937; /* gray-800 */
+  --color-secondary-900: #111827; /* gray-900 */
+
+  /* Accent Colors */
+  --color-accent: #6ce5e8; /* cyan-300 - Conversion moments only */
+  --color-accent-50: #ecfeff; /* cyan-50 */
+  --color-accent-100: #cffafe; /* cyan-100 */
+  --color-accent-200: #a5f3fc; /* cyan-200 */
+  --color-accent-300: #6ce5e8; /* cyan-300 */
+  --color-accent-400: #22d3ee; /* cyan-400 */
+  --color-accent-500: #06b6d4; /* cyan-500 */
+
+  /* Background Colors */
+  --color-background: #ffffff; /* white - Clean canvas */
+  --color-surface: #f8fafc; /* slate-50 - Subtle section separation */
+
+  /* Text Colors */
+  --color-text-primary: #1f2937; /* gray-800 - High contrast */
+  --color-text-secondary: #6b7280; /* gray-500 - Supporting details */
+
+  /* Status Colors */
+  --color-success: #10b981; /* emerald-500 - Positive metrics */
+  --color-success-50: #ecfdf5; /* emerald-50 */
+  --color-success-100: #d1fae5; /* emerald-100 */
+  --color-success-500: #10b981; /* emerald-500 */
+  --color-success-600: #059669; /* emerald-600 */
+
+  --color-warning: #f59e0b; /* amber-500 - Scarcity indicators */
+  --color-warning-50: #fffbeb; /* amber-50 */
+  --color-warning-100: #fef3c7; /* amber-100 */
+  --color-warning-500: #f59e0b; /* amber-500 */
+  --color-warning-600: #d97706; /* amber-600 */
+
+  --color-error: #ef4444; /* red-500 - Form validation */
+  --color-error-50: #fef2f2; /* red-50 */
+  --color-error-100: #fee2e2; /* red-100 */
+  --color-error-500: #ef4444; /* red-500 */
+  --color-error-600: #dc2626; /* red-600 */
+
+  /* Border Colors */
+  --color-border: #e5e7eb; /* gray-200 - Minimal borders */
+  --color-border-light: #f3f4f6; /* gray-100 */
+
+  /* Shadow Colors */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1); /* Client logo cards */
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* CTA buttons */
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Elevated elements */
+}
+
+/* Custom Component Classes */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-montserrat font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-primary-600 transition-all duration-250 ease-in-out transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white font-montserrat font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-secondary-700 transition-all duration-250 ease-in-out;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-lg shadow-sm border border-border p-6 transition-all duration-300 ease-in-out hover:shadow-md;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    transition: all 300ms ease-in-out;
+  }
+}
+
+/* Typography Utilities */
+@layer utilities {
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .transition-250 {
+    transition-duration: 250ms;
+  }
+
+  .transition-300 {
+    transition-duration: 300ms;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-count-up {
+  animation: countUp 0.8s ease-out forwards;
+}
+
+/* Responsive Design Helpers */
+@media (max-width: 640px) {
+  .section-padding {
+    @apply py-12 px-4;
+  }
+}
